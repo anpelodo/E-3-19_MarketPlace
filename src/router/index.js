@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import homeRouter from "../modules/home/router";
+import homeRouter from "../modules/marketplace/router";
 
 const routes = [
   {
@@ -7,7 +7,7 @@ const routes = [
     name: "Index",
     // component: () =>
     //   import(/* webpackChunkName: "index" */ "../views/Index.vue")
-    redirect: '/home'
+    redirect: "/home"
   },
   {
     path: "/home",
