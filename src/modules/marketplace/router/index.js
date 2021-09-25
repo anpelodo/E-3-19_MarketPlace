@@ -1,6 +1,6 @@
 export default {
   name: "/",
   component: () =>
-    import(/* webpackChunkName: "home" */ "../layouts/HomeLayout.vue"),
+    import(/* webpackChunkName: "home" */ "../layouts/MarketplaceLayout.vue"),
   children: []
 };
