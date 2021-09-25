@@ -1,7 +1,7 @@
 <template>
   <NavBar />
-  <Footbar />
   <HomeView />
+  <Footbar />
 </template>
 
 <script>
