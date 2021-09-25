@@ -9,6 +9,11 @@
 //   "dark": #343a40
 // );
 
+:root {
+  --orange: #ff7a00;
+  --white: #fff;
+}
+
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 
 .pointer {
