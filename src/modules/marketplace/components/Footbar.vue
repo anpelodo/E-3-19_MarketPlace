@@ -1,10 +1,10 @@
 <template>
-  <h3>Card</h3>
+  <h3>footbar</h3>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
 </style>
