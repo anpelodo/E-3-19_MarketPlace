@@ -6,11 +6,11 @@
         <!-- <span>categorias</span> -->
       </a>
       <a class="pointer">
-        <img class="img" :src="require('/src/assets/Logo.png')" alt="">
+        <img class="img" :src="require('/src/assets/Logo.png')" alt="Logo de la página">
       </a>
     </div>
 
-    <input type="text" placeholder="Buscar en Marketplace" />
+    <input class="inner-shadow" type="text" placeholder="Buscar en Marketplace" />
 
     <div class="nav_right">
       <a class="pointer">
@@ -28,6 +28,10 @@
   height: 2.5rem;
 }
 
+.inner-shadow {
+  box-shadow: inset 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  border-radius: 1.5rem;
+}
 
 .marketplace_nav {
   align-items: center;
@@ -45,9 +49,6 @@
   outline: none;
   padding: 0rem 1rem;
   width: 35rem;
-
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 24px;
 }
 
 .marketplace_nav i {
