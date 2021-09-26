@@ -6,7 +6,7 @@
         <!-- <span>categorias</span> -->
       </a>
       <a class="pointer">
-        <i class="fab fa-drupal"></i>
+        <img class="img" :src="require('/src/assets/Logo.png')" alt="">
       </a>
     </div>
 
@@ -24,6 +24,11 @@
 </template>
 
 <style lang="scss" scoped>
+.img {
+  height: 2.5rem;
+}
+
+
 .marketplace_nav {
   align-items: center;
   background: var(--orange);
