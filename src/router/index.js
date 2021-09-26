@@ -7,10 +7,10 @@ const routes = [
     name: "Index",
     // component: () =>
     //   import(/* webpackChunkName: "index" */ "../views/Index.vue")
-    redirect: "/home"
+    redirect: "/marketplace"
   },
   {
-    path: "/home",
+    path: "/marketplace",
     ...homeRouter
   }
 ];
