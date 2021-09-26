@@ -30,7 +30,6 @@
   display: flex;
   height: 3.5rem;
   justify-content: space-between;
-  list-style-type: none;
   padding: 0.3rem 0rem;
 }
 
