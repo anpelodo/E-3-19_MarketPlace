@@ -4,7 +4,7 @@ import homeRouter from "../modules/marketplace/router";
 const routes = [
   {
     path: "/",
-    name: "Index",
+    name: "index",
     // component: () =>
     //   import(/* webpackChunkName: "index" */ "../views/Index.vue")
     redirect: "/marketplace"

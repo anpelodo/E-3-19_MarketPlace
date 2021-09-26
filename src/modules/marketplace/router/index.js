@@ -12,7 +12,7 @@ export default {
         )
     },
     {
-      path: "producto/:id",
+      path: "product/:id",
       name: "product",
       component: () =>
         import(
