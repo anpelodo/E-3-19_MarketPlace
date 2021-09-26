@@ -2,8 +2,17 @@ import { defineAsyncComponent } from 'vue';
 <template>
   <div class="home-container">
     <div class="card-container">
-      <template v-for="card in cards" :key="card">
-        <Card />
+      <template
+        v-for="{ nombre, precio, descripcion, id, img } = product in products"
+        :key="id"
+      >
+        <Card
+          :nombre="nombre"
+          :precio="precio"
+          :descripcion="descripcion"
+          :id="id"
+          :img="img"
+        />
       </template>
     </div>
   </div>
@@ -11,6 +20,8 @@ import { defineAsyncComponent } from 'vue';
 
 <script>
 import { defineAsyncComponent } from "vue";
+import { mapState } from "vuex";
+
 export default {
   components: {
     Card: defineAsyncComponent(() => import("../components/Card.vue")),
@@ -20,6 +31,10 @@ export default {
     return {
       cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     };
+  },
+
+  computed: {
+    ...mapState("marketplace", ["products"]),
   },
 };
 </script>

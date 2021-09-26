@@ -1,13 +1,16 @@
 <template>
-  <div class="home_card pointer">
+  <div
+    class="home_card pointer"
+    @click="$router.push({ name: 'product', params: { id } })"
+  >
     <div class="card-image">
       <!-- src="https://siliconnews.plataformasinc.es/wp-content/uploads/2019/08/7-tarjetas-de-v%C3%ADdeo-para-tu-PC-gamer-que-debes-tener.jpg" -->
-      <img src="../../../assets/ram.jpg" alt="card-image" />
+      <img :src="img" :alt="nombre" />
     </div>
     <div class="card-text">
-      <p class="card-title">Nombre del producto Nombre del producto</p>
+      <p class="card-title">{{ nombre }}</p>
       <div class="card-price">
-        <p>$ 192.000</p>
+        <p>$ {{ precio }}</p>
         <button>Agregar al carrito</button>
       </div>
     </div>
@@ -15,7 +18,30 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    nombre: {
+      type: String,
+      required: true,
+    },
+    precio: {
+      type: Number,
+      required: true,
+    },
+    descripcion: {
+      type: String,
+      required: true,
+    },
+    id: {
+      type: String,
+      required: true,
+    },
+    img: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

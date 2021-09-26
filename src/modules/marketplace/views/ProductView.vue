@@ -2,12 +2,12 @@
   <div class="product-view">
     <div class="shown-product">
       <div class="image">
-        <img src="../../../assets/ram.jpg" alt="image" />
+        <img :src="product.img" :alt="product.nombre" />
       </div>
       <div class="info">
         <div class="text">
-          <p class="title">Nombre del producto</p>
-          <p class="price">$ 192.000</p>
+          <p class="title">{{ product.nombre }}</p>
+          <p class="price">$ {{ product.precio }}</p>
           <p class="stock">Stock disponible <small>(100 disponible)</small></p>
         </div>
         <div class="actions">
@@ -21,26 +21,52 @@
     <div class="description">
       <h3>Descripcion</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. At, fugit.
-        Asperiores, minima nostrum. Pariatur a architecto quod asperiores quae
-        nulla, id dolores, accusamus non voluptatem quibusdam sapiente rerum
-        suscipit nostrum. Itaque aut optio distinctio voluptatem nesciunt qui
-        alias, ab ratione. Aut eum, quas sit vitae similique suscipit a magni
-        autem sint debitis voluptates quasi, libero officia quidem laudantium
-        obcaecati natus! Distinctio maiores placeat, aperiam optio est eveniet
-        adipisci doloremque earum dolorum saepe nulla nisi corporis officiis
-        modi possimus, ullam enim harum veritatis eum quo accusantium?
-        Voluptates pariatur eius aut dolorum? Illo perferendis unde tenetur
-        eveniet officia natus corporis hic aliquam, doloribus delectus
-        reiciendis, debitis nihil? Excepturi quia ut optio totam explicabo est
-        similique necessitatibus omnis! Illum commodi quas autem velit.
+        {{ product.descripcion }}
       </p>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+
+export default {
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+  },
+
+  computed: {
+    ...mapGetters("marketplace", ["getProductById"]),
+  },
+
+  data() {
+    return {
+      product: null,
+    };
+  },
+
+  methods: {
+    loadProduct() {
+      const product = this.getProductById(this.id);
+      if (!product) return this.$router.push({ name: "home" });
+      this.product = product;
+      console.log(product, "this", this.product);
+    },
+  },
+
+  created() {
+    this.loadProduct();
+  },
+
+  watch: {
+    id() {
+      this.loadProduct();
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
