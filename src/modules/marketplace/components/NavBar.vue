@@ -40,6 +40,9 @@
   outline: none;
   padding: 0rem 1rem;
   width: 35rem;
+
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
 }
 
 .marketplace_nav i {
