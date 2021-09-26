@@ -8,7 +8,7 @@ export default {
       name: "home",
       component: () =>
         import(
-          /* webpackChunkName: "marketplace-product-view" */ "@/modules/marketplace/views/HomeView.vue"
+          /* webpackChunkName: "marketplace-home-view" */ "@/modules/marketplace/views/HomeView.vue"
         )
     },
     {
