@@ -16,9 +16,10 @@
       <router-link :to="{name:'cart'}" class="pointer">
         <i class="fas fa-shopping-cart"></i>
       </router-link>
-      <a class="pointer">
+      
+      <router-link to="/s" class="pointer">
         <i class="fas fa-user-circle"></i>
-      </a>
+      </router-link>
     </div>
   </nav>
 </template>
