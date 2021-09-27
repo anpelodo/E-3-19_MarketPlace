@@ -23,6 +23,14 @@ export default {
           id: route.params.id
         };
       }
+    },
+    {
+      path: "cart",
+      name: "cart",
+      component: () =>
+        import(
+          "@/modules/marketplace/views/CartView.vue"
+        )
     }
   ]
 };

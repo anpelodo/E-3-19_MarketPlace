@@ -108,6 +108,50 @@ export default () => ({
       img:
         "https://siliconnews.plataformasinc.es/wp-content/uploads/2019/08/7-tarjetas-de-v%C3%ADdeo-para-tu-PC-gamer-que-debes-tener.jpg",
       id: "a12"
+    },
+    {
+      nombre: "producto",
+      precio: 50000,
+      descripcion:
+        "Ipsum dolore ullamco reprehenderit veniam. Proident anim deserunt aute qui anim. Exercitation irure non voluptate voluptate ad amet cupidatat in eu occaecat ea et voluptate incididunt. Proident et excepteur voluptate irure culpa in labore sit sit aliquip aliqua duis amet. Fugiat reprehenderit irure do amet anim laboris ullamco elit cupidatat ad. Consequat officia nulla ad elit est laboris reprehenderit deserunt proident veniam.",
+      img:
+        "https://siliconnews.plataformasinc.es/wp-content/uploads/2019/08/7-tarjetas-de-v%C3%ADdeo-para-tu-PC-gamer-que-debes-tener.jpg",
+      id: "a12"
     }
+  ],
+
+  carrito:[
+    {
+      nombre: "Nombre del producto 1",
+      precio: 192000,
+      img:
+        "https://siliconnews.plataformasinc.es/wp-content/uploads/2019/08/7-tarjetas-de-v%C3%ADdeo-para-tu-PC-gamer-que-debes-tener.jpg",
+      cantidad: 3,
+      id: "c1"
+    },
+    {
+      nombre: "Nombre del producto 2",
+      precio: 180000,
+      img:
+        "https://siliconnews.plataformasinc.es/wp-content/uploads/2019/08/7-tarjetas-de-v%C3%ADdeo-para-tu-PC-gamer-que-debes-tener.jpg",
+      cantidad: 2,
+      id: "c2"
+    },
+    {
+      nombre: "Nombre del producto 3",
+      precio: 70000,
+      img:
+        "https://siliconnews.plataformasinc.es/wp-content/uploads/2019/08/7-tarjetas-de-v%C3%ADdeo-para-tu-PC-gamer-que-debes-tener.jpg",
+      cantidad: 1,
+      id: "c3"
+    },
+    {
+      nombre: "Nombre del producto 4",
+      precio: 75000,
+      img:
+        "https://siliconnews.plataformasinc.es/wp-content/uploads/2019/08/7-tarjetas-de-v%C3%ADdeo-para-tu-PC-gamer-que-debes-tener.jpg",
+      cantidad: 1,
+      id: "c4"
+    },
   ]
 });

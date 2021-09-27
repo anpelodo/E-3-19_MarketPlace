@@ -53,7 +53,6 @@ export default {
       const product = this.getProductById(this.id);
       if (!product) return this.$router.push({ name: "home" });
       this.product = product;
-      console.log(product, "this", this.product);
     },
   },
 
