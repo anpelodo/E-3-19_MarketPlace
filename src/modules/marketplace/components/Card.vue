@@ -1,7 +1,7 @@
 <template>
   <div
     class="home_card pointer"
-    @click="$router.push({ name: 'sing-form' })"
+    @click="$router.push({ name: 'product', params: { id } })"
   >
     <div class="card-image">
       <!-- src="https://siliconnews.plataformasinc.es/wp-content/uploads/2019/08/7-tarjetas-de-v%C3%ADdeo-para-tu-PC-gamer-que-debes-tener.jpg" -->
