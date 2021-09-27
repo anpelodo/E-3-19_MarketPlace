@@ -5,23 +5,24 @@
         <i class="fas fa-bars"></i>
         <!-- <span>categorias</span> -->
       </a>
-      <a class="pointer">
+      <router-link :to="{name:'home'}" class="pointer">
         <img class="img" :src="require('/src/assets/Logo.png')" alt="Logo de la página">
-      </a>
+      </router-link>
     </div>
 
     <input class="inner-shadow" type="text" placeholder="Buscar en Marketplace" />
 
     <div class="nav_right">
-      <a class="pointer">
+      <router-link :to="{name:'cart'}" class="pointer">
         <i class="fas fa-shopping-cart"></i>
-      </a>
+      </router-link>
       <a class="pointer">
         <i class="fas fa-user-circle"></i>
       </a>
     </div>
   </nav>
 </template>
+
 
 <style lang="scss" scoped>
 .img {
