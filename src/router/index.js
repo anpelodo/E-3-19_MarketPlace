@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import homeRouter from "../modules/marketplace/router";
+import sign from "../modules/signin_signup/router";
 
 const routes = [
   {
@@ -12,6 +13,10 @@ const routes = [
   {
     path: "/marketplace",
     ...homeRouter
+  },
+  {
+    path: "/s",
+    ...sign
   }
 ];
 
