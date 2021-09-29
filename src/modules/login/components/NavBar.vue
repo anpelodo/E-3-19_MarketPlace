@@ -3,20 +3,16 @@
     <div class="nav_left">
       <router-link :to="{ name: 'home' }">
         <a class="pointer">
-          <img
-            class="img"
-            :src="require('/src/assets/Logo.png')"
-            alt="logo del marketplace"
-          />
+          <img class="img" :src="require('/src/assets/Logo.png')" alt="logo del marketplace" />
         </a>
       </router-link>
     </div>
 
     <div class="nav_right">
       <p>
-        ¿Ya tienes una cuenta?
-        <router-link to="/login"
-          ><span class="pointer">Iniciar sesión</span></router-link
+        ¿No tienes una cuenta?
+        <router-link to="/s"
+          ><span class="pointer">Registrate</span></router-link
         >
       </p>
     </div>
