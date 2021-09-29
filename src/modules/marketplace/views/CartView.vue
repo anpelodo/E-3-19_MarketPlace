@@ -12,6 +12,7 @@
             :precio="precio"
             :img="img"
             :cantidad="cantidad"
+            :id="id"
           />
         </div>
       </div>
@@ -42,11 +43,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container-carrito {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 1rem;
 }
 
@@ -55,25 +56,24 @@ export default {
   flex-direction: column;
 }
 
-.titulo{
+.titulo {
   font-size: 2.2rem;
   font-weight: bold;
   padding-left: 1.7rem;
-  
 }
 
 .lista {
   max-height: 65vh;
-  overflow-y: auto;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .pago {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
   font-size: 1.6rem;
-  align-items: center;
+  width: 100%;
 }
 
 .pago p {

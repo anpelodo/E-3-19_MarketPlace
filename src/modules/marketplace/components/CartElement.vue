@@ -2,7 +2,7 @@
   <div class="home_cart">
     <div class="nombrep">
       <div class="cart-image">
-        <img :src="img" :alt="nombre">
+        <img :src="img" :alt="nombre" />
       </div>
 
       <div class="cart-text">
@@ -13,7 +13,7 @@
 
     <div class="quantity-selection">
       <input type="number" min="1" :value="cantidad" />
-      <p class="cart-price">$ {{subTotal}}</p>
+      <p class="cart-price">$ {{ subTotal }}</p>
     </div>
 
     <div class="pointer">
@@ -24,9 +24,9 @@
 
 <script>
 export default {
-  computed:{
+  computed: {
     subTotal() {
-      return this.precio*this.cantidad;
+      return this.precio * this.cantidad;
     },
   },
 
@@ -56,7 +56,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 .home_cart {
   display: flex;
   flex-wrap: nowrap;
@@ -95,11 +95,9 @@ input[type="number"] {
 }
 
 .fa-trash {
-  // color: rgb(243, 13, 13);
   color: var(--orange);
   font-size: 1.8rem;
   &:hover {
-    // color: rgb(243, 40, 40);
     color: var(--hover);
     transition: 0.3s;
   }
