@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+
+header {
+    background: #FF7A00;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+}
+.content-table {
+    
+    margin: 50px 40px;
+    
+}
+table {
+    
+    max-inline-size: 100%;
+    margin-right: 100px;
+    
+}
+
+thead {
+    background: #C4C4C4;
+}
+
+tbody {
+    background: #F6F6F6;
+}
+
+.iconoEdit {
+    color: #DCD532;
+}
+
+
+.container {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+  }
+  .container .btn-holder {
+    justify-content: flex-end;
+    display: flex;
+
+ 
+  }
+
+  .circle{
+    background-color: #FF7A00;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: white;
+
+  }
+
+  
+
+
