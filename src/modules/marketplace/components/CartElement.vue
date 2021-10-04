@@ -12,7 +12,7 @@
     </div>
 
     <div class="quantity-selection">
-      <input type="number" min="1" :value="cantidad" />
+      <input type="number" min="1" v-model="cantidades" />
       <p class="cart-price">$ {{ subTotal }}</p>
     </div>
 
@@ -26,8 +26,14 @@
 export default {
   computed: {
     subTotal() {
-      return this.precio * this.cantidad;
+      return this.precio * this.cantidades;
     },
+  },
+
+  data() {
+    return {
+      cantidades: this.cantidad,
+    };
   },
 
   props: {
