@@ -1,5 +1,5 @@
 <template>
-   <!-- Modal -->
+   <!-- Modal Editar-->
   <div class="modal fade" id="editProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
