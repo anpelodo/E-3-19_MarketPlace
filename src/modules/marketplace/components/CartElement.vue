@@ -12,7 +12,7 @@
     </div>
 
     <div class="quantity-selection">
-      <input type="number" min="1" v-model="cantidades" />
+      <input type="number" min="1" v-model="cantidades" :max="stock" />
       <p class="cart-price">$ {{ subTotal }}</p>
     </div>
 
@@ -53,8 +53,12 @@ export default {
       type: Number,
       required: true,
     },
-    id: {
+    _id: {
       type: String,
+      required: true,
+    },
+    stock: {
+      type: Number,
       required: true,
     },
   },

@@ -1,7 +1,6 @@
 export default {
   name: "admin",
-  component: () => import(/* webpackChunkName: "admin" */ "../layouts/AdminLayout.vue"),
-  children: [
-    
-  ]
+  component: () =>
+    import(/* webpackChunkName: "admin" */ "../layouts/AdminLayout.vue"),
+  children: []
 };

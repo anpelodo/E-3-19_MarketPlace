@@ -1,9 +1,9 @@
 <template>
-  <div
-    class="home_card pointer"
-    @click="$router.push({ name: 'product', params: { id } })"
-  >
-    <div class="card-image">
+  <div class="home_card pointer">
+    <div
+      @click="$router.push({ name: 'product', params: { _id } })"
+      class="card-image"
+    >
       <!-- src="https://siliconnews.plataformasinc.es/wp-content/uploads/2019/08/7-tarjetas-de-v%C3%ADdeo-para-tu-PC-gamer-que-debes-tener.jpg" -->
       <img :src="img" :alt="nombre" />
     </div>
@@ -11,13 +11,14 @@
       <p class="card-title">{{ nombre }}</p>
       <div class="card-price">
         <p>$ {{ precio }}</p>
-        <button>Agregar al carrito</button>
+        <button @click.prevent="addToCart(_id)">Agregar al carrito</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
 export default {
   props: {
     nombre: {
@@ -32,13 +33,27 @@ export default {
       type: String,
       required: true,
     },
-    id: {
+    _id: {
       type: String,
       required: true,
     },
     img: {
       type: String,
       required: true,
+    },
+  },
+
+  computed: {
+    ...mapGetters("marketplace", ["getProductById", "existElementInCart"]),
+  },
+
+  methods: {
+    ...mapMutations("marketplace", ["addProductToCart"]),
+    addToCart(_id) {
+      if (this.existElementInCart(_id) === true) return;
+
+      const product = { ...this.getProductById(_id), cantidad: 1 };
+      this.addProductToCart(product);
     },
   },
 };

@@ -12,7 +12,7 @@ export default {
         )
     },
     {
-      path: "product/:id",
+      path: "product/:_id",
       name: "product",
       component: () =>
         import(
@@ -20,17 +20,14 @@ export default {
         ),
       props: route => {
         return {
-          id: route.params.id
+          _id: route.params._id
         };
       }
     },
     {
       path: "cart",
       name: "cart",
-      component: () =>
-        import(
-          "@/modules/marketplace/views/CartView.vue"
-        )
+      component: () => import("@/modules/marketplace/views/CartView.vue")
     }
   ]
 };

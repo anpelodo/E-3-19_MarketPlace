@@ -8,13 +8,15 @@
         <div class="text">
           <p class="title">{{ product.nombre }}</p>
           <p class="price">$ {{ product.precio }}</p>
-          <p class="stock">Stock disponible <small>(100 disponible)</small></p>
+          <p class="stock">
+            Stock disponible <small>({{ product.stock }})</small>
+          </p>
         </div>
         <div class="actions">
           <div class="quantity-selection">
-            <input type="number" min="1" value="1" />
+            <input type="number" min="0" v-model="cant" :max="product.stock" />
           </div>
-          <button>Añadir al carrito</button>
+          <button @click="addToCart(product._id)">Añadir al carrito</button>
         </div>
       </div>
     </div>
@@ -28,31 +30,41 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   props: {
-    id: {
+    _id: {
       type: String,
       required: true,
     },
   },
 
   computed: {
-    ...mapGetters("marketplace", ["getProductById"]),
+    ...mapGetters("marketplace", ["getProductById", "existElementInCart"]),
   },
 
   data() {
     return {
       product: null,
+      cant: 0,
     };
   },
 
   methods: {
+    ...mapMutations("marketplace", ["addProductToCart"]),
     loadProduct() {
-      const product = this.getProductById(this.id);
+      const product = this.getProductById(this._id);
       if (!product) return this.$router.push({ name: "home" });
       this.product = product;
+    },
+    addToCart(_id) {
+      if (this.existElementInCart(_id) === true) return;
+
+      if (this.cant === 0) return;
+
+      const product = { ...this.getProductById(_id), cantidad: this.cant };
+      this.addProductToCart(product);
     },
   },
 
