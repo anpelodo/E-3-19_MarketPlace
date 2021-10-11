@@ -4,21 +4,29 @@
       <p class="titulo">Carrito de compra</p>
       <div class="lista">
         <div
-          v-for="{ nombre, precio, img, cantidad, id } = item in carrito"
-          :key="id"
+          v-for="{
+            nombre,
+            precio,
+            img,
+            cantidad,
+            _id,
+            stock,
+          } = item in carrito"
+          :key="_id"
         >
           <Prod
             :nombre="nombre"
             :precio="precio"
             :img="img"
             :cantidad="cantidad"
-            :id="id"
+            :_id="_id"
+            :stock="stock"
           />
         </div>
       </div>
 
       <div class="pago">
-        <p>Total: $ 300.000</p>
+        <p>Total: $ {{ total }}</p>
         <button>Pagar</button>
       </div>
     </div>
@@ -34,7 +42,9 @@ export default {
     Prod: defineAsyncComponent(() => import("../components/CartElement.vue")),
   },
   data() {
-    return {};
+    return {
+      total: 0,
+    };
   },
 
   computed: {

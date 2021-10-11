@@ -12,17 +12,18 @@
     </div>
 
     <div class="quantity-selection">
-      <input type="number" min="1" v-model="cantidades" />
+      <input type="number" min="1" v-model="cantidades" :max="stock" />
       <p class="cart-price">$ {{ subTotal }}</p>
     </div>
 
-    <div class="pointer">
+    <div @click="deleteProductCart(_id)" class="pointer">
       <i class="fas fa-trash"></i>
     </div>
   </div>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
   computed: {
     subTotal() {
@@ -34,6 +35,10 @@ export default {
     return {
       cantidades: this.cantidad,
     };
+  },
+
+  methods: {
+    ...mapMutations("marketplace", ["deleteProductCart"]),
   },
 
   props: {
@@ -53,8 +58,12 @@ export default {
       type: Number,
       required: true,
     },
-    id: {
+    _id: {
       type: String,
+      required: true,
+    },
+    stock: {
+      type: Number,
       required: true,
     },
   },

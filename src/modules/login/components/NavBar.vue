@@ -3,7 +3,11 @@
     <div class="nav_left">
       <router-link :to="{ name: 'home' }">
         <a class="pointer">
-          <img class="img" :src="require('/src/assets/Logo.png')" alt="logo del marketplace" />
+          <img
+            class="img"
+            :src="require('/src/assets/Logo.png')"
+            alt="logo del marketplace"
+          />
         </a>
       </router-link>
     </div>
