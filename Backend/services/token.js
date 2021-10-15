@@ -29,7 +29,7 @@ module.exports = {
   //generar el token
   encode: async (_id, rol) => {
     console.log(rol);
-    const token = jwt.sign({ id: _id, rol: rol }, "secretKeyToGenerateToken", {
+    const token = jwt.sign({ id: _id }, "secretKeyToGenerateToken", {
       expiresIn: "1d"
     });
     return token;
@@ -38,7 +38,7 @@ module.exports = {
   decode: async token => {
     try {
       const { id } = await jwt.verify(token, "secretKeyToGenerateToken");
-      const user = await User.findOne({ where: { id: id } });
+      const user = await User.findById({ id });
       if (user) {
         return user;
       } else {
