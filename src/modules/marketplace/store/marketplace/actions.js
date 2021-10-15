@@ -4,8 +4,8 @@
 import marketplaceApi from "../../../../api/marketplace";
 
 export const loadProducts = async ({ commit }) => {
-  const { data } = await marketplaceApi.get("/producto");
-  // const { data } = await axios.get(`http://localhost:3002/api/producto`);
+  const { data } = await marketplaceApi.get("/product/list");
+
   if (!data) {
     commit("setProducts", []);
     return;
