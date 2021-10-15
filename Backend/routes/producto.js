@@ -5,19 +5,36 @@ const Producto = require("../models/producto");
 
 //Agregar un producto
 
-router.post("/nuevo-producto", async (req, res) => {
-  const body = req.body;
+router.post(
+  "/nuevo-producto",
+  async (req, res, next) => {
+    const token = req.headers.token;
+    if (!token) {
+      return res.status(404).json({ mensaje: "No token" });
+    }
 
-  try {
-    const productoDB = await Producto.create(body);
-    res.status(201).json(productoDB);
-  } catch (error) {
-    return res.status(500).json({
-      mensaje: "Ocurrio un error",
-      error
-    });
+    if (token === "test") {
+      next();
+    } else {
+      return res.status(401).send({
+        message: "No autorizado"
+      });
+    }
+  },
+  async (req, res) => {
+    const body = req.body;
+
+    try {
+      const productoDB = await Producto.create(body);
+      res.status(201).json(productoDB);
+    } catch (error) {
+      return res.status(500).json({
+        mensaje: "Ocurrio un error",
+        error
+      });
+    }
   }
-});
+);
 
 //obtener documento por id
 router.get("/producto/:id", async (req, res) => {

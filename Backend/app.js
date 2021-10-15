@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
+const router = require("./routes/mainRouter.js");
 const path = require("path");
 //const { url } = require('inspector');
 
@@ -26,8 +27,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//Main Router
-app.use("/api", require("./routes/producto"));
+//Main API Router
+app.use("/api", router);
 
 const history = require("connect-history-api-fallback");
 app.use(history());
