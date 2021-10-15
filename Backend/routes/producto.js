@@ -14,7 +14,7 @@ router.post("/nuevo-producto", async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       mensaje: "Ocurrio un error",
-      err
+      error
     });
   }
 });
@@ -30,7 +30,7 @@ router.get("/producto/:id", async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       mensaje: "Ocurrio un error",
-      err
+      error
     });
   }
 });
@@ -43,7 +43,7 @@ router.get("/producto", async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       mensaje: "Ocurrio un error",
-      err
+      error
     });
   }
 });
@@ -57,8 +57,7 @@ router.delete("/producto/:id", async (req, res) => {
 
     if (!productoDB) {
       return res.status(400).json({
-        mensaje: "No se encontro el id indicado",
-        error
+        mensaje: "No se encontro el id indicado"
       });
     } else {
       return res.status(200).json({
@@ -69,7 +68,7 @@ router.delete("/producto/:id", async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       mensaje: "Ocurrio un error",
-      err
+      error
     });
   }
 });
@@ -88,7 +87,7 @@ router.put("/producto/:id", async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       mensaje: "Ocurrio un error",
-      err
+      error
     });
   }
 });
