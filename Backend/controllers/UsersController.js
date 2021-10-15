@@ -31,6 +31,7 @@ module.exports = {
   update: async (req, res) => {
     const _id = req.params.id;
     let body = req.body;
+    body.rol = "USER";
 
     try {
       const userDB = await Users.findByIdAndUpdate(_id, body, {
