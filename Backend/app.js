@@ -9,7 +9,9 @@ const app = express();
 
 //CONEXION A DB
 const mongoose = require("mongoose");
-const uri = "mongodb://127.0.0.1:27017/marketplace";
+//const uri = "mongodb://127.0.0.1:27017/marketplace";
+const uri =
+  "mongodb+srv://marketplace:ciclo3_pswd_2021@misionticciclo3.wkqqi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 mongoose.connect(uri, options).then(
