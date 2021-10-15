@@ -1,5 +1,6 @@
-const Users = require("../models/user");
 var bcrypt = require("bcryptjs");
+const Users = require("../models/user");
+const jwt = require("../services/token");
 
 module.exports = {
   // Agrega un nuevo usuario
@@ -99,7 +100,7 @@ module.exports = {
       if (user) {
         let match = await bcrypt.compare(_password, user.password);
         if (match) {
-          let tokenReturn = "Test"; //TODO Implementar el token
+          let tokenReturn = await jwt.encode(user.id, user.rol);
           res.status(200).json({ user, tokenReturn });
         } else {
           res.status(401).send({
