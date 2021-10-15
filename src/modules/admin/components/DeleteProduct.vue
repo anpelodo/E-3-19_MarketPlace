@@ -60,7 +60,7 @@ export default {
   methods: {
     listarProductos() {
       this.axios
-        .get("/producto")
+        .get("/product/list")
         .then((res) => {
           this.productos = res.data;
         })
@@ -71,7 +71,7 @@ export default {
     deleteProduct(id) {
       console.log(id);
       this.axios
-        .delete(`/producto/${id}`)
+        .delete(`/product/${id}`)
         .then((res) => {
           console.log(res.data._id);
           const { id: newId, status } = res.data;

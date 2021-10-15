@@ -395,7 +395,7 @@ export default {
   methods: {
     listarProductos() {
       this.axios
-        .get("/producto")
+        .get("/product/list")
         .then((res) => {
           this.productos = res.data;
         })
@@ -405,7 +405,7 @@ export default {
     },
     addProducto() {
       this.axios
-        .post("/nuevo-producto", this.producto)
+        .post("/product/add", this.producto)
         .then((res) => {
           this.productos.push(res.data);
           this.producto.codigo = "";
@@ -429,7 +429,7 @@ export default {
 
       console.log(id);
       this.axios
-        .delete(`/producto/${id}`)
+        .delete(`/product/${id}`)
         .then((res) => {
           console.log(res.data._id);
           const { id: newId, status } = res.data;
@@ -450,7 +450,7 @@ export default {
     },
     activarEdicion(id) {
       this.axios
-        .get(`/producto/${id}`)
+        .get(`/product/${id}`)
         .then((res) => {
           this.productoEdit = res.data;
         })
@@ -461,7 +461,7 @@ export default {
 
     editarProducto(item) {
       this.axios
-        .put(`/producto/${item._id}`, item)
+        .put(`/product/${item._id}`, item)
         .then((res) => {
           const index = this.productos.findIndex((n) => n._id === res.data._id);
           this.productos[index].codigo = res.data.codigo;

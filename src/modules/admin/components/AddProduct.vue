@@ -144,7 +144,7 @@ export default {
   methods: {
     listarProductos() {
       this.axios
-        .get("/producto")
+        .get("/product/list")
         .then((res) => {
           this.productos = res.data;
         })
@@ -155,7 +155,7 @@ export default {
 
     addProducto() {
       this.axios
-        .post("/nuevo-producto", this.producto)
+        .post("/product/add", this.producto)
         .then((res) => {
           this.productos.push(res.data);
           this.producto.codigo = "";
