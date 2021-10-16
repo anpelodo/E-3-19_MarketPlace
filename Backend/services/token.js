@@ -11,7 +11,6 @@ async function checkToken(token) {
   } catch (e) {
     return false;
   }
-  console.log(__id);
   const user = await User.findById(__id);
   if (user) {
     const token = jwt.sign(
@@ -29,8 +28,7 @@ async function checkToken(token) {
 
 module.exports = {
   //generar el token
-  encode: async (_id, rol) => {
-    console.log(rol);
+  encode: async _id => {
     const token = jwt.sign({ id: _id }, encodeKey, {
       expiresIn: "1d"
     });

@@ -101,7 +101,7 @@ module.exports = {
       if (user) {
         let match = await bcrypt.compare(_password, user.password);
         if (match) {
-          let tokenReturn = await jwt.encode(user.id, user.rol);
+          let tokenReturn = await jwt.encode(user.id);
           res.status(200).json({ user, tokenReturn });
         } else {
           res.status(401).send({
