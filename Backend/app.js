@@ -18,7 +18,7 @@ mongoose.connect(uri, options).then(
   () => {
     console.log("Conectado a DB");
   },
-  err => {
+  (err) => {
     console.log("Error conectando a la base de datos: ", err);
   }
 );
@@ -26,6 +26,16 @@ mongoose.connect(uri, options).then(
 //MIDDLEWARE's
 app.use(morgan("tiny"));
 app.use(cors());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
+  next();
+});
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -37,7 +47,7 @@ app.use(history());
 app.use(express.static(path.join(__dirname, "public")));
 
 //PUERTO
-app.set("puerto", process.env.PORT || 3002);
+app.set("puerto", process.env.PORT || 3000);
 app.listen(app.get("puerto"), function() {
   console.log("Example app listening on port " + app.get("puerto"));
 });
